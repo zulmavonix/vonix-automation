@@ -1,6 +1,5 @@
 package org.vonix.transaction;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,10 +9,6 @@ import org.vonix.authentication.loginEmail;
 import static java.lang.Character.toTitleCase;
 
 public class EasyTradeBuy extends Config {
-
-    static String nameCoin  = "bitcoin";
-    static String amoutCoin = "0.2";
-
 
     private static WebElement buttonEasyTradeDashboard() {
         return webDriverWait()
@@ -36,14 +31,8 @@ public class EasyTradeBuy extends Config {
                                 .findElement(By.xpath("//input[@class='vx-input with-icon']"))));
     }
 
-    private static WebElement selectCoin() {
-        return webDriverWait()
-                .until(ExpectedConditions
-                        .elementToBeClickable(driver
-                                .findElement(By.xpath("//span[normalize-space()='" + nameCoin + "']"))));
-    }
 
-    private static WebElement selectCoinDiv() {
+    private static WebElement selectCoin() {
         return webDriverWait()
                 .until(ExpectedConditions
                         .elementToBeClickable(driver
@@ -72,13 +61,13 @@ public class EasyTradeBuy extends Config {
     }
 
 
-    public static void stepEasyTradeBuy() throws InterruptedException {
+    public static void stepEasyTradeBuy(String nameCoin, String amountCoin) throws InterruptedException {
         loginEmail.stepLogin();
         buttonEasyTradeDashboard().click();
         dropDownSelectCoin().click();
         fieldSelectCoin().sendKeys(nameCoin);
-        selectCoinDiv().click();
-        fieldAmount().sendKeys(amoutCoin);
+        selectCoin().click();
+        fieldAmount().sendKeys(amountCoin);
         buttonBuySell().click();
         Thread.sleep(2000);
         buttonConfirm().click();

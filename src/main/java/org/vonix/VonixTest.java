@@ -72,7 +72,10 @@ public class VonixTest extends Config {
 
     @Test
     public void easyTradeBuyTest() throws InterruptedException {
-        EasyTradeBuy.stepEasyTradeBuy();
+        String nameCoin     = "Sol";
+        String amountCoin   = "0.3";
+
+        EasyTradeBuy.stepEasyTradeBuy(nameCoin,amountCoin);
         quitDriver();
     }
 }
