@@ -52,4 +52,19 @@ public class VonixTest extends Config {
                 Assert.fail("Test Case Forgot Password Failed because " + getTextForgotSuccess + " Not Found");
             }
     }
+
+    
+    @Test
+    public void loginPhoneNumberTest() throws InterruptedException {
+        LoginPhoneNumber.stepLoginPhoneNumber();
+        String getTextKodeOTP   = LoginPhoneNumber.textEnterOTP().getText();
+            if ("Please enter the OTP".equals(getTextKodeOTP)) {
+                Assert.assertTrue(true);
+                System.out.println("Test Case Login Phone Number Success");
+                quitDriver();
+            }else {
+                quitDriver();
+                Assert.fail("Test Case Login Phone Number Failed because " + getTextKodeOTP + " Not Found");
+            }
+    }
 }
