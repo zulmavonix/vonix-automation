@@ -13,13 +13,11 @@ import org.vonix.transaction.EasyTradeBuy;
 public class VonixTest extends Config {
 
     private static String inputEmail() {
-        String Email    = "hariyanto.iyan@vonix.id";
-        return Email;
+        return "hariyanto.iyan@vonix.id";
     }
 
     private static String inputPassword() {
-        String Password = "Vonix1234!";
-        return Password;
+        return "Vonix1234!";
     }
     @Test
     public void loginEmailTest() throws InterruptedException {
