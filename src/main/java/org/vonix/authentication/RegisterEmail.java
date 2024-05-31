@@ -47,8 +47,7 @@ public class RegisterEmail extends Config {
     }
 
     public static WebElement successRegister() {
-        WebElement emailRequired    = driver.findElement(By.xpath("//p[@class='register-email__pending__title']"));
-        return emailRequired;
+        return driver.findElement(By.xpath("//p[@class='register-email__pending__title']"));
     }
 
     private static String inputDisplayName() { return "Zulma Sean"; }
