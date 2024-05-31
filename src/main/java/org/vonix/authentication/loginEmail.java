@@ -39,8 +39,7 @@ public class loginEmail extends Config {
     }
 
     public static WebElement textLoginSuccess() {
-        WebElement successText  = driver.findElement(By.xpath("//p[normalize-space()='Overview']"));
-        return successText;
+        return driver.findElement(By.xpath("//p[normalize-space()='Overview']"));
     }
 
     public static void stepLogin() throws InterruptedException {
