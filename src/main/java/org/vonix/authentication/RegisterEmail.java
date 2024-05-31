@@ -52,7 +52,7 @@ public class RegisterEmail extends Config {
 
     private static String inputDisplayName() { return "Zulma Sean"; }
 
-    private static String inputEmailRegister() { return "zulma.irzamsyah+automation6@vonix.id"; }
+    private static String inputEmailRegister() { return "zulma.irzamsyah+automation17@vonix.id"; }
 
     private static String inputPasswordRegister() { return "Vonix@2023"; }
 

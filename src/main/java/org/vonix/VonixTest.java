@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.vonix.authentication.ForgotPassword;
+import org.vonix.authentication.LoginPhoneNumber;
 import org.vonix.authentication.RegisterEmail;
 import org.vonix.authentication.loginEmail;
 

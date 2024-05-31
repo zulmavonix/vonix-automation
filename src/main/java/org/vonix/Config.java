@@ -13,7 +13,7 @@ public class Config {
     public static WebDriver driver;
 
     public static void getDriver() {
-        System.setProperty("webdriver.chrome.driver", "/Users/zulma/Documents/Project/Vonix/WebApp/browserdriver/chromedriver-win64/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/zulma/Documents/Project/Vonix/web-automation/browserdriver/chromedriver-win64/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
