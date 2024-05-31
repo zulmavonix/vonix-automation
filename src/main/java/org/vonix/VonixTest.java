@@ -65,6 +65,7 @@ public class VonixTest extends Config {
             }else {
                 quitDriver();
                 Assert.fail("Test Case Login Phone Number Failed because " + getTextKodeOTP + " Not Found");
+                getTextKodeOTP;
             }
     }
 }
