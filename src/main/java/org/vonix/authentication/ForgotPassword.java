@@ -19,8 +19,7 @@ public class ForgotPassword extends Config {
     }
 
     public static WebElement textForgotSuccess() {
-        WebElement successText  = driver.findElement(By.xpath("//h1[normalize-space()='Check Your Email!']"));
-        return successText;
+        return driver.findElement(By.xpath("//h1[normalize-space()='Check Your Email!']"));
     }
 
     private static String inputForgotEmail() { return "zulma.sean84@gmail.com"; }
