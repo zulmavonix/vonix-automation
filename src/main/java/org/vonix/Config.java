@@ -13,7 +13,8 @@ public class Config {
     public static WebDriver driver;
 
     public static void getDriver() {
-        System.setProperty("webdriver.chrome.driver", "/Users/zulma/Documents/Project/Vonix/web-automation/browserdriver/chromedriver-win64/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/zulma/Documents/Project/Vonix/web-automation/browserdriver/chromedriver-win64/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
@@ -25,13 +26,14 @@ public class Config {
     }
 
 
-    String url  = "https://dev.vonix.id/";
+    String dev  = "https://dev.vonix.id/";
+    String prod = "https://vonix.id/";
 
     public void configureBrowser() {
         getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get(url);
+        driver.get(prod);
     }
 
     public void quitDriver() throws InterruptedException {

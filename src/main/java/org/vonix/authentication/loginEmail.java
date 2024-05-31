@@ -26,16 +26,18 @@ public class loginEmail extends Config {
     }
 
     private static WebElement buttonLoginPage() {
-        return webDriverWait().until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='vx-btn-md vx-btn-gradient bd-2 with-icon dark-mode btn-submit']"))));
+        return webDriverWait()
+                .until(ExpectedConditions
+                        .elementToBeClickable(driver.findElement(By.xpath("//button[@class='vx-btn-md vx-btn-gradient bd-2 with-icon dark-mode btn-submit']"))));
     }
 
 
     private static String privateInputEmail() {
-        return "zulma.sean84@gmail.com";
+        return "hariyanto.iyan@vonix.id";
     }
 
     private static String privateInputPassword() {
-        return "Vonix@2023";
+        return "Vonix1234!";
     }
 
     public static WebElement textLoginSuccess() {

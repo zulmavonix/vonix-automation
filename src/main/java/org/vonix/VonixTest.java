@@ -8,6 +8,7 @@ import org.vonix.authentication.ForgotPassword;
 import org.vonix.authentication.LoginPhoneNumber;
 import org.vonix.authentication.RegisterEmail;
 import org.vonix.authentication.loginEmail;
+import org.vonix.transaction.EasyTradeBuy;
 
 public class VonixTest extends Config {
     @Test
@@ -67,5 +68,11 @@ public class VonixTest extends Config {
                 quitDriver();
                 Assert.fail("Test Case Login Phone Number Failed because " + getTextKodeOTP + " Not Found");
             }
+    }
+
+    @Test
+    public void easyTradeBuyTest() throws InterruptedException {
+        EasyTradeBuy.stepEasyTradeBuy();
+        quitDriver();
     }
 }

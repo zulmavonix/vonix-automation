@@ -13,7 +13,9 @@ public class RegisterEmail extends Config {
     }
 
     private static WebElement buttonAgreeRegister() {
-        return webDriverWait().until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("(//button[@type='button'])[2]"))));
+        return webDriverWait()
+                .until(ExpectedConditions
+                        .elementToBeClickable(driver.findElement(By.xpath("(//button[@type='button'])[2]"))));
     }
 
     private static WebElement scrollRegister() {
@@ -39,11 +41,15 @@ public class RegisterEmail extends Config {
     }
 
     private static WebElement errorMessage() {
-        return webDriverWait().until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//span[@class='vx-input-error-message']"))));
+        return webDriverWait()
+                .until(ExpectedConditions
+                        .elementToBeClickable(driver.findElement(By.xpath("//span[@class='vx-input-error-message']"))));
     }
 
     private static WebElement buttonCreateAccount() {
-        return webDriverWait().until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@data-test='btn-submit']"))));
+        return webDriverWait()
+                .until(ExpectedConditions
+                        .elementToBeClickable(driver.findElement(By.xpath("//button[@data-test='btn-submit']"))));
     }
 
     public static WebElement successRegister() {
