@@ -28,7 +28,8 @@ public class loginEmail extends Config {
     private static WebElement buttonLoginPage() {
         return webDriverWait()
                 .until(ExpectedConditions
-                        .elementToBeClickable(driver.findElement(By.xpath("//button[@class='vx-btn-md vx-btn-gradient bd-2 with-icon dark-mode btn-submit']"))));
+                        .elementToBeClickable(driver
+                                .findElement(By.xpath("//button[@class='vx-btn-md vx-btn-gradient bd-2 with-icon dark-mode btn-submit']"))));
     }
 
 

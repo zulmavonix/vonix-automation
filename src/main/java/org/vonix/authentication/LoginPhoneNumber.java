@@ -9,7 +9,8 @@ public class LoginPhoneNumber extends Config {
     private static WebElement buttonLoginPhone() {
         return webDriverWait()
                 .until(ExpectedConditions
-                        .elementToBeClickable(driver.findElement(By.xpath("//button[normalize-space()='Login with Phone Number']"))));
+                        .elementToBeClickable(driver
+                                .findElement(By.xpath("//button[normalize-space()='Login with Phone Number']"))));
     }
 
     private static WebElement fieldPhoneNumber() {
