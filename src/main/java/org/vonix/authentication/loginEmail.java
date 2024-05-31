@@ -33,24 +33,25 @@ public class loginEmail extends Config {
     }
 
 
-    private static String privateInputEmail() {
-        return "hariyanto.iyan@vonix.id";
+    private static String privateInputEmail(String Email) {
+        return Email;
     }
 
-    private static String privateInputPassword() {
-        return "Vonix1234!";
+    private static String privateInputPassword(String Password) {
+        return Password;
     }
 
     public static WebElement textLoginSuccess() {
         return driver.findElement(By.xpath("//p[normalize-space()='Overview']"));
     }
 
-    public static void stepLogin() throws InterruptedException {
-        Config openBrowser = new Config();
+    public static void stepLogin(String Email, String Password) throws InterruptedException {
+        Config openBrowser  = new Config();
         openBrowser.configureBrowser();
+
         buttonLogin().click();
-        fieldEmail().sendKeys(privateInputEmail());
-        fieldPassword().sendKeys(privateInputPassword());
+        fieldEmail().sendKeys(privateInputEmail(Email));
+        fieldPassword().sendKeys(privateInputPassword(Password));
         buttonLoginPage().click();
     }
 }

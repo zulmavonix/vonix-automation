@@ -22,16 +22,16 @@ public class ForgotPassword extends Config {
         return driver.findElement(By.xpath("//h1[normalize-space()='Check Your Email!']"));
     }
 
-    private static String inputForgotEmail() { return "zulma.sean84@gmail.com"; }
+    private static String inputForgotEmail(String Email) { return Email; }
 
-    public static void stepForgotPassword() {
+    public static void stepForgotPassword(String Email) {
         Config openBrowser      = new Config();
         openBrowser.configureBrowser();
         loginEmail buttonLogin  = new loginEmail();
 
         buttonLogin.publicButtonLogin().click();
         buttonForgotPassword().click();
-        fieldForgotEmail().sendKeys(inputForgotEmail());
+        fieldForgotEmail().sendKeys(inputForgotEmail(Email));
         buttonResetPassword().click();
     }
 }

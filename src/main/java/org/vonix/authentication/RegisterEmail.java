@@ -59,24 +59,24 @@ public class RegisterEmail extends Config {
         return driver.findElement(By.xpath("//p[@class='register-email__pending__title']"));
     }
 
-    private static String inputDisplayName() { return "Zulma Sean"; }
+    private static String inputDisplayName(String DisplayName) { return DisplayName; }
 
-    private static String inputEmailRegister() { return "zulma.irzamsyah+automation17@vonix.id"; }
+    private static String inputEmailRegister(String EmailRegister) { return EmailRegister; }
 
-    private static String inputPasswordRegister() { return "Vonix@2023"; }
+    private static String inputPasswordRegister(String PasswordRegister) { return PasswordRegister; }
 
-    public static void stepRegister() throws InterruptedException {
+    public static void stepRegister(String DisplayName, String EmailRegister, String PasswordRegister) throws InterruptedException {
         Config openBrowser = new Config();
         openBrowser.configureBrowser();
 
         buttonRegister().click();
         scrollRegisterJE();
         buttonAgreeRegister().click();
-        fieldDisplayName().sendKeys(inputDisplayName());
+        fieldDisplayName().sendKeys(inputDisplayName(DisplayName));
         errorMessage().isEnabled();
         fieldEmailRegister().click();
-        fieldEmailRegister().sendKeys(inputEmailRegister());
-        fieldPasswordRegister().sendKeys(inputPasswordRegister());
+        fieldEmailRegister().sendKeys(inputEmailRegister(EmailRegister));
+        fieldPasswordRegister().sendKeys(inputPasswordRegister(PasswordRegister));
         buttonCreateAccount().click();
         Thread.sleep(10000);
     }

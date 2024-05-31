@@ -11,9 +11,23 @@ import org.vonix.authentication.loginEmail;
 import org.vonix.transaction.EasyTradeBuy;
 
 public class VonixTest extends Config {
+
+    private static String inputEmail() {
+        String Email    = "hariyanto.iyan@vonix.id";
+        return Email;
+    }
+
+    private static String inputPassword() {
+        String Password = "Vonix1234!";
+        return Password;
+    }
     @Test
     public void loginEmailTest() throws InterruptedException {
-        loginEmail.stepLogin();
+
+        String Email        = inputEmail();
+        String Password     = inputPassword();
+
+        loginEmail.stepLogin(Email, Password);
         String getTextSuccess = loginEmail.textLoginSuccess().getText();
             if ("Overview".equals(getTextSuccess)) {
                 Assert.assertTrue(true);
@@ -23,13 +37,16 @@ public class VonixTest extends Config {
                 quitDriver();
                 Assert.fail("Test Case Failed because " + getTextSuccess + " Not Found");
             }
-//        Assert.assertEquals(getTextSuccess,"Overview");
-//        quitDriver();
     }
 
     @Test
     public void registerTest() throws InterruptedException {
-        RegisterEmail.stepRegister();
+
+        String DisplayName      = "Zulma Sean";
+        String EmailRegister    = "zulma.irzamsyah+automation210@vonix.id";
+        String PasswordRegister = "Vonix@2023";
+
+        RegisterEmail.stepRegister(DisplayName, EmailRegister, PasswordRegister);
         String getTextSuccess = RegisterEmail.successRegister().getText();
             if ("Email Verification Required!".equals(getTextSuccess)) {
                 Assert.assertTrue(true);
@@ -43,7 +60,10 @@ public class VonixTest extends Config {
 
     @Test
     public void forgotPasswordTest() throws InterruptedException {
-        ForgotPassword.stepForgotPassword();
+
+        String Email    = "zulma.sean84@gmail.com";
+
+        ForgotPassword.stepForgotPassword(Email);
         String getTextForgotSuccess = ForgotPassword.textForgotSuccess().getText();
             if ("Check Your Email!".equals(getTextForgotSuccess)) {
                 Assert.assertTrue(true);
@@ -58,7 +78,10 @@ public class VonixTest extends Config {
     
     @Test
     public void loginPhoneNumberTest() throws InterruptedException {
-        LoginPhoneNumber.stepLoginPhoneNumber();
+
+        String PhoneNumber  = "081373914540";
+
+        LoginPhoneNumber.stepLoginPhoneNumber(PhoneNumber);
         String getTextKodeOTP   = LoginPhoneNumber.textEnterOTP().getText();
             if ("Please enter the OTP".equals(getTextKodeOTP)) {
                 Assert.assertTrue(true);
@@ -72,10 +95,13 @@ public class VonixTest extends Config {
 
     @Test
     public void easyTradeBuyTest() throws InterruptedException {
+
         String nameCoin     = "Sol";
         String amountCoin   = "0.3";
+        String Email        = inputEmail();
+        String Password     = inputPassword();
 
-        EasyTradeBuy.stepEasyTradeBuy(nameCoin,amountCoin);
+        EasyTradeBuy.stepEasyTradeBuy(nameCoin,amountCoin, Email, Password);
         quitDriver();
     }
 }

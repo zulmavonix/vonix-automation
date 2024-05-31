@@ -25,11 +25,11 @@ public class LoginPhoneNumber extends Config {
         return driver.findElement(By.xpath("//h1[normalize-space()='Please enter the OTP']"));
     }
 
-    private static String inputPhoneNumber() {
-        return "081373914540";
+    private static String inputPhoneNumber(String PhoneNumber) {
+        return PhoneNumber;
     }
 
-    public static void stepLoginPhoneNumber() throws InterruptedException {
+    public static void stepLoginPhoneNumber(String PhoneNumber) throws InterruptedException {
         Config openBrowser = new Config();
         openBrowser.configureBrowser();
         loginEmail buttonLogin = new loginEmail();
@@ -37,7 +37,7 @@ public class LoginPhoneNumber extends Config {
         buttonLogin.publicButtonLogin().click();
         Thread.sleep(5000);
         buttonLoginPhone().click();
-        fieldPhoneNumber().sendKeys(inputPhoneNumber());
+        fieldPhoneNumber().sendKeys(inputPhoneNumber(PhoneNumber));
         buttonSendOTP().click();
     }
 }

@@ -6,8 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.vonix.Config;
 import org.vonix.authentication.loginEmail;
 
-import static java.lang.Character.toTitleCase;
-
 public class EasyTradeBuy extends Config {
 
     private static WebElement buttonEasyTradeDashboard() {
@@ -60,14 +58,18 @@ public class EasyTradeBuy extends Config {
                                 .findElement(By.xpath("//button[@class='vx-btn-md vx-btn-primary bd-2 with-icon dark-mode']"))));
     }
 
+    private static String inputNameCoin(String nameCoin) { return nameCoin; }
 
-    public static void stepEasyTradeBuy(String nameCoin, String amountCoin) throws InterruptedException {
-        loginEmail.stepLogin();
+    private static String inputAmoutCoin(String amountCoin) { return amountCoin; }
+
+
+    public static void stepEasyTradeBuy(String nameCoin, String amountCoin, String Email, String Password) throws InterruptedException {
+        loginEmail.stepLogin(Email, Password);
         buttonEasyTradeDashboard().click();
         dropDownSelectCoin().click();
-        fieldSelectCoin().sendKeys(nameCoin);
+        fieldSelectCoin().sendKeys(inputNameCoin(nameCoin));
         selectCoin().click();
-        fieldAmount().sendKeys(amountCoin);
+        fieldAmount().sendKeys(inputAmoutCoin(amountCoin));
         buttonBuySell().click();
         Thread.sleep(2000);
         buttonConfirm().click();
