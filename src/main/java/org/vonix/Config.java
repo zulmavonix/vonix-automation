@@ -17,7 +17,7 @@ public class Config {
                 "/Users/zulma/Documents/Vonix/web-automation/browserdriver/chromedriver-win64/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--force-dark-mode");
+        options.addArguments("--force-dark-mode"); //Config chrome to dark mode only
         driver = new ChromeDriver(options);
     }
 
