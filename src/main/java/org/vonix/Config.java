@@ -22,8 +22,7 @@ public class Config {
     }
 
     public static WebDriverWait webDriverWait() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        return wait;
+        return new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
 
