@@ -33,7 +33,7 @@ public class Config {
         getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.get(prod);
+        driver.get(dev);
     }
 
     public void quitDriver() throws InterruptedException {

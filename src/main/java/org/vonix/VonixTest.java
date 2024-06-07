@@ -6,16 +6,21 @@ import org.vonix.authentication.ForgotPassword;
 import org.vonix.authentication.LoginPhoneNumber;
 import org.vonix.authentication.RegisterEmail;
 import org.vonix.authentication.loginEmail;
+import org.vonix.portfolio.WithdrawInputAmount;
 import org.vonix.transaction.EasyTradeBuy;
+
+import java.io.IOException;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class VonixTest extends Config {
 
     private static String inputEmail() {
-        return "hariyanto.iyan@vonix.id";
+        return "zulma.irzamsyah+2@vonix.id";
     }
 
     private static String inputPassword() {
-        return "Vonix1234!";
+        return "Vonix@2023";
     }
     @Test
     public void loginEmailTest() throws InterruptedException {
@@ -101,5 +106,23 @@ public class VonixTest extends Config {
             EasyTradeBuy.stepEasyTradeBuy(nameCoin,amountCoin, Email, Password);
             quitDriver();
         }
+    }
+
+    @Test
+    public void withdrawTest() throws InterruptedException, IOException {
+
+        String Email        = inputEmail();
+        String Password     = inputPassword();
+
+        WithdrawInputAmount.stepWithdraw(Email, Password);
+        String getSuccessWithdraw   = WithdrawInputAmount.statusWithdraw().getText();
+            if ("Success".equals(getSuccessWithdraw)) {
+                Assert.assertTrue(true);
+                System.out.println("Test Case Withdraw Success");
+                quitDriver();
+            }else {
+                quitDriver();
+                Assert.fail("Test Case Withdraw Success because " + getSuccessWithdraw + " Not Found");
+            }
     }
 }
