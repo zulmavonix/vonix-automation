@@ -97,7 +97,9 @@ public class VonixTest extends Config {
         String Email        = inputEmail();
         String Password     = inputPassword();
 
-        EasyTradeBuy.stepEasyTradeBuy(nameCoin,amountCoin, Email, Password);
-        quitDriver();
+        for(int i=1; i<5; i++) {
+            EasyTradeBuy.stepEasyTradeBuy(nameCoin,amountCoin, Email, Password);
+            quitDriver();
+        }
     }
 }

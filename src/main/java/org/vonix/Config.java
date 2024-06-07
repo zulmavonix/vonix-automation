@@ -13,8 +13,8 @@ public class Config {
     public static WebDriver driver;
 
     public static void getDriver() {
-        System.setProperty("webdriver.chrome.driver",
-                "/Users/zulma/Documents/Vonix/web-automation/browserdriver/chromedriver-win64/chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver",
+//                "/Users/zulma/Documents/Vonix/web-automation/browserdriver/chromedriver-win64/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--force-dark-mode"); //Config chrome to dark mode only
@@ -32,7 +32,7 @@ public class Config {
     public void configureBrowser() {
         getDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get(prod);
     }
 

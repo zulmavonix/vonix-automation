@@ -58,6 +58,8 @@ public class EasyTradeBuy extends Config {
                                 .findElement(By.xpath("//button[@class='vx-btn-md vx-btn-primary bd-2 with-icon dark-mode']"))));
     }
 
+
+
     private static String inputNameCoin(String nameCoin) { return nameCoin; }
 
     private static String inputAmoutCoin(String amountCoin) { return amountCoin; }
@@ -70,6 +72,7 @@ public class EasyTradeBuy extends Config {
         fieldSelectCoin().sendKeys(inputNameCoin(nameCoin));
         selectCoin().click();
         fieldAmount().sendKeys(inputAmoutCoin(amountCoin));
+        Thread.sleep(2000);
         buttonBuySell().click();
         Thread.sleep(2000);
         buttonConfirm().click();
