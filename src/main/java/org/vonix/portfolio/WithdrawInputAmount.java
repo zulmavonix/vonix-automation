@@ -33,8 +33,9 @@ public class WithdrawInputAmount extends Config {
     }
 
     private static WebElement chooseBank() throws IOException {
-        String bankName = "";
-        String bankAccount = "";
+
+        String bankName = ExcelUtils.dataReadSheetBankName();
+        String bankAccount = ExcelUtils.dataReadSheetBankAccount();
         return webDriverWait()
                 .until(ExpectedConditions
                         .elementToBeClickable(driver.findElement(By.xpath("//div[contains(text(),'" + bankName + " - " + bankAccount + "')]"))));
